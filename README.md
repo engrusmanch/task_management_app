@@ -20,6 +20,20 @@ The application uses Riverpod for state management, which provides a robust and 
 ### In-Memory Database
 An in-memory mock database is used to simulate the backend. This allows for testing and development without needing a real database.
 
+## Screenshots
+
+### Task List Screen
+![Task List](screenshots/TaskList.png)
+
+### Add Task Screen
+![Add Task](screenshots/AddTask.png)
+
+### Edit Task Screen
+![Edit Task](screenshots/EditTask.png)
+
+### Delete Task Confirmation
+![Delete Task](screenshots/DeleteTask.png)
+
 ## Contact
 For any questions or suggestions, please feel free to open an issue or contact me at [engr.usmanch26@gmail.com](mailto:engr.usmanch26@gmail.com).
 
