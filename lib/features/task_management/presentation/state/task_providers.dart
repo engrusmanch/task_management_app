@@ -1,4 +1,4 @@
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task_management_app/core/services/local_storage/db_helper.dart';
 import 'package:task_management_app/features/task_management/data/data_sources/local_data_source.dart';
 import 'package:task_management_app/features/task_management/data/repo_impl/task_repo_impl.dart';
@@ -8,6 +8,7 @@ import 'package:task_management_app/features/task_management/domain/usecase/add_
 import 'package:task_management_app/features/task_management/domain/usecase/delete_task.dart';
 import 'package:task_management_app/features/task_management/domain/usecase/get_task.dart';
 import 'package:task_management_app/features/task_management/domain/usecase/update_task.dart';
+import 'package:task_management_app/features/task_management/presentation/state/task_%20notifier.dart';
 import 'package:uuid/uuid.dart';
 
 // Providers
@@ -55,44 +56,3 @@ final taskListProvider = StateNotifierProvider<TaskListNotifier, List<Task>>((re
     deleteTask: ref.watch(deleteTaskProvider),
   );
 });
-
-/// StateNotifier that manages the list of tasks.
-class TaskListNotifier extends StateNotifier<List<Task>> {
-  final GetTasks getTasks;
-  final AddTask addTask;
-  final UpdateTask updateTask;
-  final DeleteTask deleteTask;
-
-  TaskListNotifier({
-    required this.getTasks,
-    required this.addTask,
-    required this.updateTask,
-    required this.deleteTask,
-  }) : super([]) {
-    // Load tasks from the repository when the notifier is instantiated.
-    _loadTasks();
-  }
-
-  /// Loads tasks from the repository and updates the state.
-  Future<void> _loadTasks() async {
-    state = await getTasks();
-  }
-
-  /// Adds a new task to the repository and reloads the tasks.
-  Future<void> addNewTask(String title, String description) async {
-    await addTask(title, description);
-    await _loadTasks();
-  }
-
-  /// Updates an existing task in the repository and reloads the tasks.
-  Future<void> modifyTask(Task task) async {
-    await updateTask(task);
-    await _loadTasks();
-  }
-
-  /// Deletes a task from the repository and reloads the tasks.
-  Future<void> removeTask(String id) async {
-    await deleteTask(id);
-    await _loadTasks();
-  }
-}

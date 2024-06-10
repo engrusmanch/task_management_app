@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task_management_app/features/task_management/domain/entitiy/task.dart';
+import 'package:task_management_app/features/task_management/presentation/state/task_providers.dart';
 import 'package:task_management_app/features/task_management/presentation/widgets/add_dialog.dart';
 import 'package:task_management_app/features/task_management/presentation/widgets/delete_dialog.dart';
 import 'package:task_management_app/features/task_management/presentation/widgets/edit_dialog.dart';

@@ -7,7 +7,7 @@ import 'package:task_management_app/features/task_management/domain/usecase/add_
 import 'package:task_management_app/features/task_management/domain/usecase/delete_task.dart';
 import 'package:task_management_app/features/task_management/domain/usecase/get_task.dart';
 import 'package:task_management_app/features/task_management/domain/usecase/update_task.dart';
-import 'package:task_management_app/features/task_management/presentation/state/task_provider.dart';
+import 'package:task_management_app/features/task_management/presentation/state/task_%20notifier.dart';
 import 'package:uuid/uuid.dart';
 
 // Mock LocalDataSource

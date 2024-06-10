@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task_management_app/features/task_management/domain/entitiy/task.dart';
-import 'package:task_management_app/features/task_management/presentation/state/task_provider.dart';
+import 'package:task_management_app/features/task_management/presentation/state/task_providers.dart';
 
 void showEditTaskDialog(BuildContext context, WidgetRef ref, Task task) {
   TextEditingController titleController = TextEditingController(text: task.title);
